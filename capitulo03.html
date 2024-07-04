@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 3: Primeiros Passos com Git: Criando e Clonando Repositórios</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 3: Primeiros Passos com Git: Criando e Clonando Repositórios</h1>
+    
+    <h2>Criando um Novo Repositório</h2>
+    <p>Para começar a usar o Git, você pode criar um novo repositório em seu diretório de projeto. Isso inicializará um novo repositório Git e permitirá que você comece a versionar seu código.</p>
+    
+    <ol>
+        <li><strong>Criar um Diretório de Projeto:</strong> No Terminal ou Git Bash, navegue até o local onde você deseja criar o diretório do projeto e execute:
+            <pre><code>mkdir nome-do-projeto
+cd nome-do-projeto</code></pre>
+        </li>
+        <li><strong>Inicializar um Repositório Git:</strong> Dentro do diretório do projeto, execute:
+            <pre><code>git init</code></pre>
+            Isso cria um novo subdiretório chamado <code>.git</code> que contém todos os arquivos necessários para o repositório.
+        </li>
+        <li><strong>Adicionar Arquivos ao Repositório:</strong> Crie ou copie os arquivos que deseja versionar dentro do diretório do projeto. Adicione os arquivos ao repositório usando:
+            <pre><code>git add .</code></pre>
+            Este comando adiciona todos os arquivos no diretório atual ao índice do Git.
+        </li>
+        <li><strong>Fazer o Primeiro Commit:</strong> Para salvar as alterações no repositório, execute:
+            <pre><code>git commit -m "Primeiro commit"</code></pre>
+            Isso cria um snapshot dos arquivos e os armazena no histórico do repositório.
+        </li>
+    </ol>
+    
+    <h2>Clonando um Repositório Existente</h2>
+    <p>Se você já tem um repositório Git hospedado em um serviço como GitHub, GitLab ou Bitbucket, pode clonar o repositório para criar uma cópia local.</p>
+    
+    <ol>
+        <li><strong>Obter a URL do Repositório:</strong> Acesse o repositório no serviço de hospedagem e copie a URL do repositório. Geralmente, essa URL é encontrada em um botão "Clone" ou "Download".</li>
+        <li><strong>Clonar o Repositório:</strong> No Terminal ou Git Bash, navegue até o diretório onde deseja clonar o repositório e execute:
+            <pre><code>git clone &lt;url-do-repositorio&gt;</code></pre>
+            Por exemplo:
+            <pre><code>git clone https://github.com/usuario/nome-do-repositorio.git</code></pre>
+        </li>
+        <li><strong>Verificar o Conteúdo Clonado:</strong> Após o comando <code>git clone</code>, um novo diretório será criado com o nome do repositório, contendo todos os arquivos e histórico do repositório original. Navegue até o diretório clonado:
+            <pre><code>cd nome-do-repositorio</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>Agora você sabe como criar um novo repositório e clonar um repositório existente. Essas operações são fundamentais para começar a trabalhar com Git, seja iniciando um novo projeto ou colaborando em um projeto existente. No próximo capítulo, vamos explorar o ciclo de vida dos arquivos no Git e como eles são gerenciados.</p>
+    </div>
+</body>
+</html>

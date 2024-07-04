@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 4: Entendendo o Ciclo de Vida dos Arquivos no Git</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 4: Entendendo o Ciclo de Vida dos Arquivos no Git</h1>
+    
+    <h2>O Ciclo de Vida dos Arquivos</h2>
+    <p>No Git, os arquivos passam por diferentes estados no seu ciclo de vida. Compreender esses estados é fundamental para gerenciar suas alterações e saber como cada comando do Git afeta seus arquivos. Os principais estados dos arquivos no Git são:</p>
+    
+    <ul>
+        <li><strong>Untracked (Não Rastreado):</strong> Arquivos que não estão sendo rastreados pelo Git. Eles são novos e ainda não foram adicionados ao índice.</li>
+        <li><strong>Unmodified (Não Modificado):</strong> Arquivos que estão rastreados pelo Git e não sofreram alterações desde o último commit.</li>
+        <li><strong>Modified (Modificado):</strong> Arquivos que foram alterados mas ainda não foram adicionados ao índice.</li>
+        <li><strong>Staged (Preparado):</strong> Arquivos que foram modificados e adicionados ao índice, prontos para serem confirmados no próximo commit.</li>
+    </ul>
+    
+    <h2>Comandos Básicos do Ciclo de Vida</h2>
+
+    <h3><code>git status</code></h3>
+    <p>O comando <code>git status</code> exibe o status dos arquivos no repositório, mostrando quais arquivos estão modificados, quais estão preparados para commit e quais não estão sendo rastreados.</p>
+    
+    <pre><code>git status</code></pre>
+
+    <h3><code>git add</code></h3>
+    <p>O comando <code>git add</code> adiciona arquivos ao índice (stage), mudando seu estado para "staged". Você pode adicionar arquivos específicos ou todos os arquivos modificados.</p>
+    
+    <pre><code>git add arquivo.txt
+git add .</code></pre>
+
+    <h3><code>git commit</code></h3>
+    <p>O comando <code>git commit</code> confirma as mudanças preparadas no índice, criando um novo snapshot no histórico do repositório.</p>
+    
+    <pre><code>git commit -m "Sua mensagem de commit"
+git commit</code></pre>
+
+    <h3><code>git diff</code></h3>
+    <p>O comando <code>git diff</code> mostra as diferenças entre o estado atual do repositório e o índice. Ele é útil para revisar alterações antes de preparar ou confirmar.</p>
+    
+    <pre><code>git diff</code></pre>
+
+    <h2>Exemplos Práticos</h2>
+
+    <h3>Adicionando e Confirmando Arquivos</h3>
+    <ol>
+        <li><strong>Criar ou Modificar Arquivos:</strong> Crie ou modifique arquivos no diretório do projeto.</li>
+        <li><strong>Verificar o Status:</strong> Use <code>git status</code> para ver o estado dos arquivos.</li>
+        <li><strong>Adicionar Arquivos ao Índice:</strong> Adicione os arquivos modificados ao índice:
+            <pre><code>git add .</code></pre>
+        </li>
+        <li><strong>Confirmar as Alterações:</strong> Confirme as mudanças preparadas:
+            <pre><code>git commit -m "Adicionar ou modificar arquivos"</code></pre>
+        </li>
+    </ol>
+
+    <h3>Revisando Alterações</h3>
+    <p>Antes de adicionar as mudanças ao índice, você pode revisar as alterações feitas nos arquivos:</p>
+    
+    <ol>
+        <li><strong>Verificar Diferenças:</strong> Use <code>git diff</code> para ver as mudanças não preparadas:
+            <pre><code>git diff</code></pre>
+        </li>
+        <li><strong>Verificar o Índice:</strong> Use <code>git diff --staged</code> para ver as mudanças preparadas:
+            <pre><code>git diff --staged</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>Compreender o ciclo de vida dos arquivos no Git e os comandos associados é essencial para gerenciar eficazmente suas alterações. No próximo capítulo, exploraremos em detalhes os comandos básicos <code>git add</code>, <code>git commit</code> e <code>git status</code>.</p>
+    </div>
+</body>
+</html>

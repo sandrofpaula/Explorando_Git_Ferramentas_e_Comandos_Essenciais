@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 14: Git e Colaboração: Pull Requests e Revisão de Código</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 14: Git e Colaboração: Pull Requests e Revisão de Código</h1>
+    
+    <h2>Introdução à Colaboração com Git</h2>
+    <p>A colaboração é um aspecto fundamental do desenvolvimento de software. O Git, juntamente com plataformas de hospedagem como GitHub, GitLab e Bitbucket, oferece ferramentas poderosas para facilitar a colaboração por meio de pull requests e revisões de código.</p>
+    
+    <h2>Pull Requests</h2>
+    <p>Um pull request (PR) é uma solicitação para mesclar suas alterações em uma branch principal. Ele permite que outros desenvolvedores revisem suas mudanças antes de integrá-las ao código base.</p>
+    <ol>
+        <li><strong>Criar um Pull Request:</strong>
+            <p>Após fazer commit e push de suas alterações para uma branch remota, navegue até a página do repositório no GitHub, GitLab ou Bitbucket.</p>
+            <p>Clique em "New Pull Request" (ou equivalente) e selecione a branch com suas alterações.</p>
+            <p>Adicione um título e uma descrição detalhada explicando suas mudanças e clique em "Create Pull Request".</p>
+        </li>
+        <li><strong>Revisão de Código:</strong>
+            <p>Outros membros da equipe podem revisar seu PR, deixando comentários e sugestões.</p>
+            <p>Você pode responder aos comentários, fazer commits adicionais para resolver problemas e atualizar o PR.</p>
+        </li>
+        <li><strong>Mesclando o Pull Request:</strong>
+            <p>Após a aprovação, o PR pode ser mesclado na branch principal. Isso pode ser feito pelo autor do PR ou por um membro da equipe com permissões de merge.</p>
+        </li>
+    </ol>
+    
+    <h2>Revisão de Código</h2>
+    <p>A revisão de código é um processo onde os desenvolvedores analisam as mudanças feitas por outros membros da equipe. Isso ajuda a garantir a qualidade do código e a disseminar conhecimento entre a equipe.</p>
+    <ol>
+        <li><strong>Comentando em Linhas Específicas:</strong>
+            <p>Durante a revisão, você pode comentar em linhas específicas do código, sugerindo melhorias ou apontando problemas.</p>
+        </li>
+        <li><strong>Aprovação ou Rejeição:</strong>
+            <p>Após revisar todas as mudanças, você pode aprovar o PR se tudo estiver correto, ou solicitar mudanças adicionais se houver problemas.</p>
+        </li>
+        <li><strong>Discussões e Melhorias:</strong>
+            <p>As revisões de código promovem discussões técnicas e colaborativas, levando a melhorias contínuas no código base.</p>
+        </li>
+    </ol>
+    
+    <h2>Exemplo Prático</h2>
+    <h3>Criando e Revisando um Pull Request</h3>
+    <ol>
+        <li><strong>Fazer Alterações e Commit:</strong>
+            <p>Suponha que você fez algumas alterações em uma branch chamada <code>feature-x</code>:</p>
+            <pre><code>git add .
+git commit -m "Adicionar nova funcionalidade X"</code></pre>
+        </li>
+        <li><strong>Push das Alterações para o Remoto:</strong>
+            <p>Envie suas alterações para o repositório remoto:</p>
+            <pre><code>git push origin feature-x</code></pre>
+        </li>
+        <li><strong>Criar um Pull Request:</strong>
+            <p>No GitHub, GitLab ou Bitbucket, vá para a página do repositório e clique em "New Pull Request".</p>
+            <p>Selecione a branch <code>feature-x</code> e a branch principal (<code>main</code> ou <code>master</code>), adicione um título e uma descrição, e crie o PR.</p>
+        </li>
+        <li><strong>Revisão e Comentários:</strong>
+            <p>Os revisores podem adicionar comentários em linhas específicas, sugerindo melhorias ou apontando problemas.</p>
+        </li>
+        <li><strong>Fazer Alterações com Base nos Comentários:</strong>
+            <p>Faça commits adicionais para resolver os problemas levantados:</p>
+            <pre><code>git add .
+git commit -m "Corrigir problemas apontados na revisão"
+git push origin feature-x</code></pre>
+        </li>
+        <li><strong>Mesclar o Pull Request:</strong>
+            <p>Após a aprovação, o PR pode ser mesclado na branch principal.</p>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>A colaboração usando pull requests e revisões de código é essencial para manter a qualidade do código e promover um ambiente de desenvolvimento saudável e colaborativo. Com essas práticas, você pode garantir que o código seja revisado e melhorado continuamente.</p>
+    <p>No próximo capítulo, exploraremos ferramentas gráficas para Git e como elas podem facilitar seu fluxo de trabalho.</p>
+    </div>
+</body>
+</html>

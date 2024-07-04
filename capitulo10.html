@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 10: Trabalhando com Tags e Releases</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 10: Trabalhando com Tags e Releases</h1>
+    
+    <h2>Introdução às Tags</h2>
+    <p>Tags são usadas no Git para marcar pontos específicos no histórico de commits. Elas são frequentemente usadas para marcar versões de releases, facilitando o rastreamento e a recuperação de versões específicas do projeto.</p>
+    
+    <h3>Criando Tags</h3>
+    <p>Existem dois tipos principais de tags no Git: tags anotadas e tags leves.</p>
+    <ul>
+        <li><strong>Tag Anotada:</strong>
+            <pre><code>git tag -a v1.0 -m "Versão 1.0"</code></pre>
+            <p>As tags anotadas são armazenadas como objetos completos no banco de dados do Git. Elas podem incluir uma mensagem, o nome do autor, data e outras informações.</p>
+        </li>
+        <li><strong>Tag Leve:</strong>
+            <pre><code>git tag v1.0-lw</code></pre>
+            <p>As tags leves são essencialmente um ponteiro para um commit específico, sem nenhuma metadata extra.</p>
+        </li>
+    </ul>
+    
+    <h3>Listando Tags</h3>
+    <p>Para listar todas as tags no repositório, use:</p>
+    <pre><code>git tag</code></pre>
+    
+    <h3>Visualizando Informações da Tag</h3>
+    <p>Para visualizar informações detalhadas de uma tag anotada, use:</p>
+    <pre><code>git show v1.0</code></pre>
+    
+    <h3>Compartilhando Tags</h3>
+    <p>Por padrão, as tags não são enviadas para o repositório remoto com o comando <code>git push</code>. Para enviar todas as tags, use:</p>
+    <pre><code>git push origin --tags</code></pre>
+    <p>Para enviar uma tag específica, use:</p>
+    <pre><code>git push origin v1.0</code></pre>
+    
+    <h2>Trabalhando com Releases</h2>
+    <p>Releases são versões publicadas do seu projeto, geralmente associadas a tags específicas. Ferramentas como GitHub, GitLab e Bitbucket oferecem suporte para criar releases baseadas em tags, permitindo a distribuição de binários e changelogs associados.</p>
+    
+    <h3>Criando um Release no GitHub</h3>
+    <ol>
+        <li><strong>Acesse a Página do Repositório:</strong>
+            <p>Navegue até o repositório no GitHub.</p>
+        </li>
+        <li><strong>Criar uma Nova Release:</strong>
+            <p>Vá para a seção de releases e clique em "Draft a new release".</p>
+        </li>
+        <li><strong>Preencher os Detalhes da Release:</strong>
+            <p>Escolha uma tag existente ou crie uma nova.</p>
+            <p>Preencha o título e a descrição da release.</p>
+            <p>Opcionalmente, anexe binários ou outros arquivos.</p>
+        </li>
+        <li><strong>Publicar a Release:</strong>
+            <p>Clique em "Publish release" para tornar a release disponível.</p>
+        </li>
+    </ol>
+    
+    <h2>Exemplo Prático</h2>
+    
+    <h3>Criando e Compartilhando uma Tag</h3>
+    <ol>
+        <li><strong>Criar uma Tag Anotada:</strong>
+            <p>Suponha que você queira marcar a versão 1.0 do seu projeto:</p>
+            <pre><code>git tag -a v1.0 -m "Versão 1.0"</code></pre>
+        </li>
+        <li><strong>Verificar a Tag Criada:</strong>
+            <p>Liste as tags no repositório:</p>
+            <pre><code>git tag</code></pre>
+        </li>
+        <li><strong>Visualizar Detalhes da Tag:</strong>
+            <p>Exiba informações detalhadas sobre a tag:</p>
+            <pre><code>git show v1.0</code></pre>
+        </li>
+        <li><strong>Enviar a Tag para o Repositório Remoto:</strong>
+            <p>Envie a tag <code>v1.0</code> para o repositório remoto:</p>
+            <pre><code>git push origin v1.0</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>Trabalhar com tags e releases no Git facilita o gerenciamento de versões do seu projeto e a distribuição de versões estáveis para os usuários. As tags permitem marcar pontos específicos no histórico de commits, enquanto as releases oferecem uma maneira estruturada de comunicar e distribuir novas versões.</p>
+    <p>No próximo capítulo, exploraremos como utilizar o Git Stash para trabalho temporário e gerenciar mudanças não concluídas.</p>
+    </div>
+</body>
+</html>

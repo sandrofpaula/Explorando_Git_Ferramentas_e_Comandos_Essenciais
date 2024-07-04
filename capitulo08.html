@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 8: Revertendo Alterações: git reset, git revert e git checkout</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 8: Revertendo Alterações: <code>git reset</code>, <code>git revert</code> e <code>git checkout</code></h1>
+    
+    <h2>Introdução aos Comandos de Reversão</h2>
+    <p>Em algum momento, você pode precisar reverter alterações no seu repositório Git. Existem várias maneiras de fazer isso, dependendo do que você deseja alcançar. Os comandos <code>git reset</code>, <code>git revert</code> e <code>git checkout</code> são essenciais para gerenciar essas reversões.</p>
+    
+    <h2><code>git reset</code></h2>
+    <p>O comando <code>git reset</code> é usado para desfazer commits ou alterações no índice (staging area).</p>
+    <ul>
+        <li><strong>Resetar o Índice e o Working Directory:</strong>
+            <pre><code>git reset --hard &lt;commit&gt;</code></pre>
+            <p>Esta operação move a HEAD para o commit especificado e redefine o índice e o diretório de trabalho para corresponder a esse commit. Todas as alterações são perdidas.</p>
+        </li>
+        <li><strong>Resetar Apenas o Índice:</strong>
+            <pre><code>git reset --soft &lt;commit&gt;</code></pre>
+            <p>Move a HEAD para o commit especificado, mas mantém as alterações no índice e no diretório de trabalho.</p>
+        </li>
+    </ul>
+    
+    <h2><code>git revert</code></h2>
+    <p>O comando <code>git revert</code> cria um novo commit que desfaz as alterações de um commit específico. Este comando é útil para manter o histórico do repositório enquanto desfaz alterações indesejadas.</p>
+    <ul>
+        <li><strong>Reverter um Commit:</strong>
+            <pre><code>git revert &lt;commit&gt;</code></pre>
+        </li>
+    </ul>
+    
+    <h2><code>git checkout</code></h2>
+    <p>O comando <code>git checkout</code> é usado para mudar de branch ou restaurar arquivos.</p>
+    <ul>
+        <li><strong>Restaurar um Arquivo para um Estado Anterior:</strong>
+            <pre><code>git checkout &lt;commit&gt; -- &lt;arquivo&gt;</code></pre>
+        </li>
+        <li><strong>Mudar para Outra Branch:</strong>
+            <pre><code>git checkout &lt;branch&gt;</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Exemplos Práticos</h2>
+    
+    <h3>Usando <code>git reset</code></h3>
+    <ol>
+        <li><strong>Verificar o Histórico de Commits:</strong>
+            <p>Use <code>git log</code> para ver os commits recentes:</p>
+            <pre><code>git log</code></pre>
+        </li>
+        <li><strong>Resetar para um Commit Anterior:</strong>
+            <p>Suponha que você deseja desfazer o commit mais recente:</p>
+            <pre><code>git reset --hard HEAD~1</code></pre>
+        </li>
+    </ol>
+    
+    <h3>Usando <code>git revert</code></h3>
+    <ol>
+        <li><strong>Verificar o Histórico de Commits:</strong>
+            <p>Use <code>git log</code> para identificar o commit que você deseja reverter.</p>
+        </li>
+        <li><strong>Reverter um Commit Específico:</strong>
+            <p>Suponha que você deseja reverter um commit com o hash <code>abc123</code>:</p>
+            <pre><code>git revert abc123</code></pre>
+        </li>
+    </ol>
+    
+    <h3>Usando <code>git checkout</code></h3>
+    <ol>
+        <li><strong>Restaurar um Arquivo para um Estado Anterior:</strong>
+            <p>Suponha que você deseja restaurar o arquivo <code>index.html</code> para o estado do commit <code>abc123</code>:</p>
+            <pre><code>git checkout abc123 -- index.html</code></pre>
+        </li>
+        <li><strong>Mudar para Outra Branch:</strong>
+            <p>Suponha que você deseja mudar para a branch <code>feature-x</code>:</p>
+            <pre><code>git checkout feature-x</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>Os comandos <code>git reset</code>, <code>git revert</code> e <code>git checkout</code> oferecem flexibilidade para gerenciar e reverter alterações em um repositório Git. Cada comando tem seu propósito específico e pode ser usado para diferentes cenários de reversão.</p>
+    <p>No próximo capítulo, exploraremos como trabalhar com repositórios remotos usando os comandos <code>git remote</code>, <code>git fetch</code>, <code>git pull</code> e <code>git push</code>.</p>
+    </div>
+</body>
+</html>

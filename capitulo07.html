@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 7: Resolvendo Conflitos de Merge</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 7: Resolvendo Conflitos de Merge</h1>
+    
+    <h2>O Que é um Conflito de Merge?</h2>
+    <p>Quando dois desenvolvedores fazem alterações nos mesmos trechos de código em branches diferentes, um conflito de merge pode ocorrer. Isso acontece quando o Git não consegue mesclar automaticamente as mudanças de duas branches, exigindo intervenção manual para resolver as diferenças.</p>
+    
+    <h2>Identificando Conflitos</h2>
+    <ol>
+        <li><strong>Iniciar um Merge:</strong>
+            <p>Suponha que você esteja na branch <code>main</code> e deseja mesclar uma branch <code>feature-x</code>:</p>
+            <pre><code>git merge feature-x</code></pre>
+        </li>
+        <li><strong>Conflito Detectado:</strong>
+            <p>Se houver um conflito, o Git avisará e marcará os arquivos conflitantes.</p>
+        </li>
+        <li><strong>Verificar o Status:</strong>
+            <p>Use <code>git status</code> para ver quais arquivos têm conflitos:</p>
+            <pre><code>git status</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Resolvendo Conflitos</h2>
+    <ol>
+        <li><strong>Abrir o Arquivo Conflitante:</strong>
+            <p>Abra o arquivo em um editor de texto ou IDE. Você verá marcadores de conflito no arquivo:</p>
+            <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Seu código na branch atual
+=======
+Código da branch feature-x
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-x</code></pre>
+        </li>
+        <li><strong>Editar o Arquivo:</strong>
+            <p>Edite o arquivo para resolver o conflito. Remova os marcadores e combine as mudanças de forma adequada.</p>
+        </li>
+        <li><strong>Adicionar o Arquivo Resolvido ao Índice:</strong>
+            <p>Depois de resolver o conflito, adicione o arquivo ao índice:</p>
+            <pre><code>git add arquivo-conflitante.txt</code></pre>
+        </li>
+        <li><strong>Finalizar o Merge:</strong>
+            <p>Complete o merge criando um commit para registrar a resolução dos conflitos:</p>
+            <pre><code>git commit</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Ferramentas de Resolução de Conflitos</h2>
+    <p>Algumas ferramentas e IDEs fornecem interfaces gráficas para resolver conflitos, tornando o processo mais intuitivo. Exemplos incluem:</p>
+    <ul>
+        <li><strong>Visual Studio Code:</strong> Tem uma integração com Git e uma interface amigável para resolução de conflitos.</li>
+        <li><strong>Sourcetree:</strong> Um cliente Git visual que facilita a resolução de conflitos.</li>
+        <li><strong>KDiff3, Meld:</strong> Ferramentas de diffs gráficos que ajudam na comparação e mesclagem de arquivos.</li>
+    </ul>
+    
+    <h2>Evitando Conflitos</h2>
+    <p>Embora seja impossível evitar todos os conflitos, algumas práticas ajudam a minimizá-los:</p>
+    <ul>
+        <li><strong>Branches Pequenas e Frequentes:</strong> Mantenha suas branches pequenas e faça merges frequentes para reduzir a probabilidade de conflitos.</li>
+        <li><strong>Comunicação:</strong> Mantenha uma comunicação clara com sua equipe sobre quem está trabalhando em quais partes do código.</li>
+        <li><strong>Code Reviews:</strong> Realize revisões de código para identificar possíveis conflitos antes do merge.</li>
+    </ul>
+    
+    <h2>Conclusão</h2>
+    <p>Resolver conflitos de merge é uma habilidade essencial para qualquer desenvolvedor que usa Git. Entender como identificar, resolver e evitar conflitos ajudará a manter um fluxo de trabalho eficiente e colaborativo.</p>
+    <p>No próximo capítulo, exploraremos como reverter alterações usando os comandos <code>git reset</code>, <code>git revert</code> e <code>git checkout</code>.</p>
+    </div>
+</body>
+</html>

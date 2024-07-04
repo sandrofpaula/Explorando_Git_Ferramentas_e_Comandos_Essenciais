@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo Extra: Git: Boas Práticas para Escrita das Mensagens de Commits</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo Extra: Git: Boas Práticas para Escrita das Mensagens de Commits</h1>
+    
+    <h2>Importância das Mensagens de Commits</h2>
+    <p>Mensagens de commits bem escritas são essenciais para a manutenção de um histórico de projeto claro e útil. Elas ajudam os desenvolvedores a entender o contexto das mudanças, facilitam a revisão de código e melhoram a colaboração na equipe.</p>
+    
+    <h2>Estrutura de uma Boa Mensagem de Commit</h2>
+    <p>Uma mensagem de commit bem escrita geralmente segue uma estrutura padrão:</p>
+    <ul>
+        <li><strong>Resumo:</strong> Uma linha curta que descreve a mudança de forma concisa (50 caracteres ou menos).</li>
+        <li><strong>Descrição:</strong> Uma explicação mais detalhada da mudança, incluindo o motivo e o contexto (opcional, mas recomendada).</li>
+    </ul>
+    
+    <h3>Exemplo de Estrutura</h3>
+    <pre><code>Resumo da mudança (imperativo, em 50 caracteres ou menos)
+
+Descrição detalhada explicando o que foi alterado e por quê.
+Inclua qualquer contexto adicional que possa ser útil para
+os revisores ou futuros desenvolvedores.
+</code></pre>
+    
+    <h2>Melhores Práticas</h2>
+    <ul>
+        <li><strong>Use o Modo Imperativo:</strong> Escreva o resumo da mensagem de commit como um comando, por exemplo, "Corrigir bug na função de login".</li>
+        <li><strong>Mantenha o Resumo Curto:</strong> Limite o resumo a 50 caracteres ou menos. Se precisar de mais espaço, use a descrição detalhada.</li>
+        <li><strong>Inclua Contexto:</strong> Adicione uma descrição detalhada para explicar o motivo da mudança e qualquer contexto relevante.</li>
+        <li><strong>Referencie Problemas ou Tarefas:</strong> Inclua referências a issues, tickets ou tarefas relevantes, usando IDs ou links.</li>
+        <li><strong>Escreva Mensagens Claras e Objetivas:</strong> Evite jargões, abreviações ou termos ambíguos. Seja claro e direto.</li>
+        <li><strong>Use Linhas Curta na Descrição:</strong> Quebre linhas longas em parágrafos menores, limitando a largura a 72 caracteres para melhorar a legibilidade.</li>
+    </ul>
+    
+    <h2>Commits Semânticos</h2>
+    <p>Mensagens de commit semânticas seguem uma convenção específica para descrever as alterações realizadas de uma maneira padronizada. Cada mensagem consiste em um cabeçalho obrigatório e um corpo e rodapé opcionais:</p>
+    <pre><code>&lt;tipo&gt;[escopo opcional]: &lt;descrição&gt;
+[corpo opcional]
+[rodapé opcional]
+</code></pre>
+    <p>Exemplos de tipos de commit:</p>
+    <ul>
+        <li><strong>feat:</strong> Adição de um novo recurso.</li>
+        <li><strong>fix:</strong> Correção de um bug.</li>
+        <li><strong>docs:</strong> Alterações na documentação.</li>
+        <li><strong>style:</strong> Mudanças de formatação, semicolons, etc.</li>
+        <li><strong>refactor:</strong> Refatoração do código sem mudanças de funcionalidade.</li>
+        <li><strong>test:</strong> Adição ou alteração de testes.</li>
+        <li><strong>chore:</strong> Atualizações de tarefas de build ou configurações administrativas.</li>
+    </ul>
+    
+    <h3>Exemplos de Mensagens de Commit Semânticos</h3>
+    <pre><code>feat(auth): adicionar autenticação via OAuth2
+fix(database): corrigir erro na consulta de dados
+docs(readme): atualizar instruções de instalação
+</code></pre>
+    
+    <h2>Ferramentas para Ajudar na Escrita de Commits</h2>
+    <ul>
+        <li><strong>Commitizen:</strong> Uma ferramenta que ajuda a escrever mensagens de commit seguindo convenções específicas.</li>
+        <li><strong>Husky:</strong> Permite adicionar hooks ao Git, como validar mensagens de commit antes de permitir que elas sejam aplicadas.</li>
+        <li><strong>Lint de Commit:</strong> Ferramentas como Commitlint podem ser usadas para garantir que todas as mensagens de commit sigam um padrão definido.</li>
+    </ul>
+    
+    <h2>Conclusão</h2>
+    <p>Mensagens de commit bem escritas são uma parte essencial do fluxo de trabalho com Git. Elas melhoram a clareza do histórico de mudanças e facilitam a colaboração entre os desenvolvedores. Ao seguir essas boas práticas, você pode garantir que suas mensagens de commit sejam claras, concisas e úteis para toda a equipe.</p>
+    </div>
+</body>
+</html>

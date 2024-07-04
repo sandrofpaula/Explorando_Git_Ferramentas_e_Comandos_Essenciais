@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 13: Automatizando Tarefas com Hooks do Git</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 13: Automatizando Tarefas com Hooks do Git</h1>
+    
+    <h2>Introdução aos Hooks do Git</h2>
+    <p>Hooks do Git são scripts que são executados automaticamente em determinados eventos do ciclo de vida do Git. Eles permitem automatizar tarefas como validação de commits, testes de código, formatação de arquivos e muito mais. Os hooks são armazenados no diretório <code>.git/hooks</code> de cada repositório.</p>
+    
+    <h2>Tipos de Hooks</h2>
+    <p>Existem dois tipos principais de hooks no Git: hooks do lado do cliente e hooks do lado do servidor.</p>
+    <ul>
+        <li><strong>Hooks do Lado do Cliente:</strong>
+            <p>Executados em eventos como commit, merge e push. Exemplos incluem <code>pre-commit</code>, <code>prepare-commit-msg</code> e <code>pre-push</code>.</p>
+        </li>
+        <li><strong>Hooks do Lado do Servidor:</strong>
+            <p>Executados em eventos como recepção de push em um repositório remoto. Exemplos incluem <code>pre-receive</code> e <code>post-receive</code>.</p>
+        </li>
+    </ul>
+    
+    <h2>Configurando Hooks do Git</h2>
+    <p>Para configurar um hook, basta criar um arquivo de script no diretório <code>.git/hooks</code> com o nome do hook desejado e torná-lo executável.</p>
+    <h3>Exemplo de Hook <code>pre-commit</code></h3>
+    <pre><code>#! /bin/sh
+# Verifica se há arquivos não formatados
+unformatted_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.js$')
+
+if [ -n "$unformatted_files" ]; then
+  echo "Arquivos não formatados detectados:"
+  echo "$unformatted_files"
+  exit 1
+fi
+
+exit 0
+</code></pre>
+    <p>Salve o script acima em <code>.git/hooks/pre-commit</code> e torne-o executável:</p>
+    <pre><code>chmod +x .git/hooks/pre-commit</code></pre>
+    
+    <h2>Usos Comuns dos Hooks</h2>
+    <ul>
+        <li><strong>Validação de Commits:</strong>
+            <p>Use hooks <code>pre-commit</code> ou <code>commit-msg</code> para validar mensagens de commit ou verificar a formatação do código.</p>
+        </li>
+        <li><strong>Executar Testes Automatizados:</strong>
+            <p>Use hooks <code>pre-push</code> para executar testes automatizados antes de enviar mudanças para o repositório remoto.</p>
+        </li>
+        <li><strong>Formatar Código:</strong>
+            <p>Use hooks <code>pre-commit</code> para formatar automaticamente o código com ferramentas como Prettier ou ESLint.</p>
+        </li>
+        <li><strong>Notificações e Deploys:</strong>
+            <p>Use hooks <code>post-receive</code> no lado do servidor para enviar notificações ou iniciar processos de deploy após receber um push.</p>
+        </li>
+    </ul>
+    
+    <h2>Exemplo Prático</h2>
+    <h3>Criando um Hook <code>commit-msg</code> para Verificar Mensagens de Commit</h3>
+    <ol>
+        <li><strong>Criar o Script do Hook:</strong>
+            <p>Crie o arquivo <code>.git/hooks/commit-msg</code> com o seguinte conteúdo:</p>
+            <pre><code>#! /bin/sh
+# Verifica se a mensagem de commit é menor que 50 caracteres
+commit_msg_file=$1
+commit_msg=$(cat $commit_msg_file)
+
+if [ ${#commit_msg} -gt 50 ]; then
+  echo "A mensagem de commit deve ter menos de 50 caracteres."
+  exit 1
+fi
+
+exit 0
+</code></pre>
+        </li>
+        <li><strong>Tornar o Hook Executável:</strong>
+            <p>Torne o script executável:</p>
+            <pre><code>chmod +x .git/hooks/commit-msg</code></pre>
+        </li>
+        <li><strong>Testar o Hook:</strong>
+            <p>Tente fazer um commit com uma mensagem maior que 50 caracteres e verifique se o hook impede o commit:</p>
+            <pre><code>git commit -m "Esta é uma mensagem de commit muito longa para passar pela verificação do hook."</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Conclusão</h2>
+    <p>Os hooks do Git são uma ferramenta poderosa para automatizar tarefas e garantir a qualidade do código em seu repositório. Com eles, você pode implementar verificações de código, executar testes automatizados e muito mais.</p>
+    <p>No próximo capítulo, exploraremos o Git e a colaboração, focando em pull requests e revisão de código.</p>
+    </div>
+</body>
+</html>

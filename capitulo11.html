@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 11: Utilizando o Git Stash para Trabalho Temporário</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 11: Utilizando o Git Stash para Trabalho Temporário</h1>
+    
+    <h2>Introdução ao Git Stash</h2>
+    <p>O comando <code>git stash</code> é usado para salvar temporariamente as mudanças não commitadas em um repositório, permitindo que você trabalhe em outra tarefa sem perder seu progresso. Isso é útil quando você precisa mudar de branch rapidamente ou preparar seu repositório para um merge ou pull sem perder o trabalho em andamento.</p>
+    
+    <h2>Comandos Básicos do Git Stash</h2>
+    <ul>
+        <li><strong>Salvar as Mudanças no Stash:</strong>
+            <pre><code>git stash</code></pre>
+            <p>Este comando salva todas as mudanças não commitadas no stash e limpa o diretório de trabalho.</p>
+        </li>
+        <li><strong>Listar Stashes:</strong>
+            <pre><code>git stash list</code></pre>
+            <p>Lista todos os stashes criados, mostrando um identificador único para cada um.</p>
+        </li>
+        <li><strong>Aplicar um Stash:</strong>
+            <pre><code>git stash apply</code></pre>
+            <p>Aplica as mudanças do stash mais recente ao diretório de trabalho.</p>
+        </li>
+        <li><strong>Aplicar um Stash Específico:</strong>
+            <pre><code>git stash apply stash@{n}</code></pre>
+            <p>Aplica as mudanças de um stash específico, onde <code>n</code> é o índice do stash na lista.</p>
+        </li>
+        <li><strong>Remover um Stash:</strong>
+            <pre><code>git stash drop stash@{n}</code></pre>
+            <p>Remove um stash específico da lista.</p>
+        </li>
+        <li><strong>Limpar Todos os Stashes:</strong>
+            <pre><code>git stash clear</code></pre>
+            <p>Remove todos os stashes.</p>
+        </li>
+    </ul>
+    
+    <h2>Exemplo Prático</h2>
+    <h3>Salvando e Recuperando Mudanças com Git Stash</h3>
+    <ol>
+        <li><strong>Fazer Alterações no Projeto:</strong>
+            <p>Suponha que você tenha feito algumas mudanças no arquivo <code>index.html</code>.</p>
+        </li>
+        <li><strong>Salvar as Mudanças no Stash:</strong>
+            <p>Salve as mudanças não commitadas:</p>
+            <pre><code>git stash</code></pre>
+        </li>
+        <li><strong>Verificar o Status do Repositório:</strong>
+            <p>O diretório de trabalho deve estar limpo agora:</p>
+            <pre><code>git status</code></pre>
+        </li>
+        <li><strong>Listar os Stashes:</strong>
+            <p>Liste os stashes para ver o stash salvo:</p>
+            <pre><code>git stash list</code></pre>
+        </li>
+        <li><strong>Aplicar as Mudanças do Stash:</strong>
+            <p>Applique o stash mais recente:</p>
+            <pre><code>git stash apply</code></pre>
+        </li>
+        <li><strong>Aplicar e Remover o Stash:</strong>
+            <p>Applique o stash e remova-o da lista:</p>
+            <pre><code>git stash pop</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Usos Comuns do Git Stash</h2>
+    <ul>
+        <li><strong>Mudança Rápida de Contexto:</strong>
+            <p>Se você precisar mudar de branch para resolver um bug urgente, pode usar <code>git stash</code> para salvar seu trabalho em andamento, mudar de branch e, em seguida, retornar ao seu trabalho anterior aplicando o stash.</p>
+        </li>
+        <li><strong>Preparação para Pull/Merge:</strong>
+            <p>Se você precisar atualizar sua branch com mudanças do repositório remoto, pode stashear suas mudanças locais, executar <code>git pull</code> ou <code>git merge</code>, e depois aplicar o stash para continuar seu trabalho.</p>
+        </li>
+        <li><strong>Experimentos Temporários:</strong>
+            <p>Se você deseja testar algo rapidamente sem comprometer seu trabalho atual, use <code>git stash</code> para salvar seu estado atual, realize seus experimentos e, depois, aplique o stash para voltar ao estado original.</p>
+        </li>
+    </ul>
+    
+    <h2>Conclusão</h2>
+    <p>O Git Stash é uma ferramenta poderosa para gerenciar mudanças temporárias e manter seu fluxo de trabalho flexível e organizado. Com ele, você pode facilmente alternar entre tarefas e garantir que seu progresso não seja perdido.</p>
+    <p>No próximo capítulo, exploraremos o Git Rebase e como usá-lo para refinar o histórico de commits.</p>
+    </div>
+</body>
+</html>

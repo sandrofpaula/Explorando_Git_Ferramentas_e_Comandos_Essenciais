@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 12: Git Rebase: Refinando o Histórico de Commits</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 12: Git Rebase: Refinando o Histórico de Commits</h1>
+    
+    <h2>Introdução ao Git Rebase</h2>
+    <p>O comando <code>git rebase</code> é uma ferramenta poderosa no Git usada para reescrever o histórico de commits. Ele permite que você mova ou combine commits, criando um histórico de commits mais linear e organizado.</p>
+    
+    <h2>Tipos de Rebase</h2>
+    <p>Existem dois tipos principais de rebase no Git: rebase interativo e rebase automático.</p>
+    <ul>
+        <li><strong>Rebase Automático:</strong>
+            <pre><code>git rebase branch-alvo</code></pre>
+            <p>Move todos os commits da branch atual para cima dos commits da <code>branch-alvo</code>.</p>
+        </li>
+        <li><strong>Rebase Interativo:</strong>
+            <pre><code>git rebase -i commit-base</code></pre>
+            <p>Permite que você escolha, reordene, edite, combine ou descarte commits em um intervalo específico.</p>
+        </li>
+    </ul>
+    
+    <h2>Exemplo de Rebase Automático</h2>
+    <ol>
+        <li><strong>Mudar para a Branch que Será Rebasada:</strong>
+            <p>Suponha que você esteja na branch <code>feature-x</code> e deseja rebasá-la na branch <code>main</code>:</p>
+            <pre><code>git checkout feature-x</code></pre>
+        </li>
+        <li><strong>Executar o Rebase:</strong>
+            <p>Rebase a branch <code>feature-x</code> na branch <code>main</code>:</p>
+            <pre><code>git rebase main</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Exemplo de Rebase Interativo</h2>
+    <ol>
+        <li><strong>Iniciar um Rebase Interativo:</strong>
+            <p>Suponha que você queira rebasear os últimos 3 commits:</p>
+            <pre><code>git rebase -i HEAD~3</code></pre>
+        </li>
+        <li><strong>Editar a Lista de Commits:</strong>
+            <p>O editor de texto será aberto com a lista de commits. Você pode usar comandos como <code>pick</code>, <code>reword</code>, <code>edit</code>, <code>squash</code>, <code>fixup</code> ou <code>drop</code>.</p>
+        </li>
+        <li><strong>Salvar e Fechar o Editor:</strong>
+            <p>Após editar a lista, salve e feche o editor para aplicar o rebase.</p>
+        </li>
+    </ol>
+    
+    <h2>Resolvendo Conflitos Durante o Rebase</h2>
+    <p>Durante um rebase, conflitos podem ocorrer. Se isso acontecer, siga os passos abaixo:</p>
+    <ol>
+        <li><strong>Resolver o Conflito:</strong>
+            <p>Abra o arquivo conflitante e resolva o conflito manualmente.</p>
+        </li>
+        <li><strong>Adicionar o Arquivo Resolvido:</strong>
+            <p>Adicione o arquivo resolvido ao índice:</p>
+            <pre><code>git add arquivo-conflitante.txt</code></pre>
+        </li>
+        <li><strong>Continuar o Rebase:</strong>
+            <p>Continue o rebase após resolver o conflito:</p>
+            <pre><code>git rebase --continue</code></pre>
+        </li>
+        <li><strong>Abortar o Rebase:</strong>
+            <p>Se desejar cancelar o rebase, use:</p>
+            <pre><code>git rebase --abort</code></pre>
+        </li>
+    </ol>
+    
+    <h2>Benefícios do Git Rebase</h2>
+    <ul>
+        <li><strong>Histórico Limpo e Linear:</strong>
+            <p>O rebase cria um histórico de commits linear, facilitando a leitura e o entendimento do histórico do projeto.</p>
+        </li>
+        <li><strong>Combinação de Commits Relacionados:</strong>
+            <p>Você pode combinar commits relacionados, criando um histórico mais coeso.</p>
+        </li>
+        <li><strong>Redução de Merges Desnecessários:</strong>
+            <p>O rebase pode reduzir o número de merges desnecessários, simplificando o histórico.</p>
+        </li>
+    </ul>
+    
+    <h2>Conclusão</h2>
+    <p>O comando <code>git rebase</code> é uma ferramenta essencial para refinar e manter um histórico de commits limpo e organizado. Com ele, você pode reescrever e melhorar a estrutura do histórico de commits do seu projeto.</p>
+    <p>No próximo capítulo, exploraremos como automatizar tarefas com hooks do Git.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 5: Comandos Básicos: git add, git commit e git status</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 5: Comandos Básicos: <code>git add</code>, <code>git commit</code> e <code>git status</code></h1>
+    
+    <h2>Introdução aos Comandos Básicos</h2>
+    <p>Os comandos <code>git add</code>, <code>git commit</code> e <code>git status</code> são fundamentais para o uso diário do Git. Esses comandos permitem que você adicione alterações ao índice, confirme essas alterações no repositório e verifique o status atual do seu projeto.</p>
+    
+    <h2><code>git add</code></h2>
+    <p>O comando <code>git add</code> é usado para adicionar alterações ao índice (staging area). Este comando informa ao Git quais alterações você deseja incluir no próximo commit.</p>
+    <ul>
+        <li><strong>Adicionar um Arquivo Específico:</strong>
+            <pre><code>git add arquivo.txt</code></pre>
+        </li>
+        <li><strong>Adicionar Todos os Arquivos Modificados:</strong>
+            <pre><code>git add .</code></pre>
+        </li>
+    </ul>
+    
+    <h2><code>git commit</code></h2>
+    <p>O comando <code>git commit</code> confirma as alterações adicionadas ao índice, criando um snapshot permanente no histórico do repositório.</p>
+    <ul>
+        <li><strong>Commit com Mensagem:</strong>
+            <pre><code>git commit -m "Sua mensagem de commit"</code></pre>
+        </li>
+        <li><strong>Commit com Mensagem Abrindo o Editor Padrão:</strong>
+            <pre><code>git commit</code></pre>
+        </li>
+    </ul>
+    
+    <h2><code>git status</code></h2>
+    <p>O comando <code>git status</code> exibe o estado atual do repositório, mostrando quais arquivos foram modificados, quais estão preparados para commit e quais não estão sendo rastreados.</p>
+    <ul>
+        <li><strong>Verificar o Status:</strong>
+            <pre><code>git status</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Exemplo Prático</h2>
+    <p>Vamos usar um exemplo prático para demonstrar esses comandos básicos:</p>
+    
+    <h3>Criar ou Modificar um Arquivo</h3>
+    <p>Suponha que você tenha feito algumas mudanças no arquivo <code>index.html</code>:</p>
+    <pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Página de Exemplo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    
+    <h3>Verificar o Status</h3>
+    <p>No Terminal, execute:</p>
+    <pre><code>git status</code></pre>
+    <p>O Git deve mostrar que <code>index.html</code> é um arquivo não rastreado.</p>
+    
+    <h3>Adicionar o Arquivo ao Índice</h3>
+    <p>Adicione <code>index.html</code> ao índice:</p>
+    <pre><code>git add index.html</code></pre>
+    
+    <h3>Verificar o Status Novamente</h3>
+    <p>Execute <code>git status</code> novamente para verificar que <code>index.html</code> está agora no índice.</p>
+    
+    <h3>Fazer um Commit</h3>
+    <p>Confirme as alterações com uma mensagem descritiva:</p>
+    <pre><code>git commit -m "Adicionar arquivo index.html"</code></pre>
+    
+    <h3>Verificar o Histórico de Commits</h3>
+    <p>Para ver o histórico de commits, execute:</p>
+    <pre><code>git log</code></pre>
+    
+    <h2>Conclusão</h2>
+    <p>Dominar os comandos <code>git add</code>, <code>git commit</code> e <code>git status</code> é essencial para gerenciar seu fluxo de trabalho com Git. Estes comandos são a base para a maioria das operações no Git e entender seu uso correto é crucial para um gerenciamento eficaz de versões.</p>
+    <p>No próximo capítulo, exploraremos como trabalhar com branches usando os comandos <code>git branch</code>, <code>git checkout</code> e <code>git merge</code>.</p>
+    </div>
+</body>
+</html>

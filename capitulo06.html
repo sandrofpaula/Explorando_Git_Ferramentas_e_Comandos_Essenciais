@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capítulo 6: Trabalhando com Branches: git branch, git checkout e git merge</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+    <div class="container">
+    <h1>Capítulo 6: Trabalhando com Branches: <code>git branch</code>, <code>git checkout</code> e <code>git merge</code></h1>
+    
+    <h2>Introdução às Branches</h2>
+    <p>No Git, branches (ramificações) permitem que você isole seu trabalho em diferentes linhas de desenvolvimento. Você pode criar, listar, alternar e mesclar branches para organizar seu fluxo de trabalho de maneira eficiente.</p>
+    
+    <h2><code>git branch</code></h2>
+    <p>O comando <code>git branch</code> é usado para listar, criar e excluir branches.</p>
+    <ul>
+        <li><strong>Listar Branches:</strong>
+            <pre><code>git branch</code></pre>
+            <p>A branch atual será marcada com um asterisco (*).</p>
+        </li>
+        <li><strong>Criar uma Nova Branch:</strong>
+            <pre><code>git branch nome-da-branch</code></pre>
+        </li>
+        <li><strong>Excluir uma Branch:</strong>
+            <pre><code>git branch -d nome-da-branch</code></pre>
+        </li>
+    </ul>
+    
+    <h2><code>git checkout</code></h2>
+    <p>O comando <code>git checkout</code> permite que você mude para outra branch ou restaure arquivos em seu estado anterior.</p>
+    <ul>
+        <li><strong>Mudar para Outra Branch:</strong>
+            <pre><code>git checkout nome-da-branch</code></pre>
+        </li>
+        <li><strong>Criar e Mudar para uma Nova Branch:</strong>
+            <pre><code>git checkout -b nova-branch</code></pre>
+        </li>
+    </ul>
+    
+    <h2><code>git merge</code></h2>
+    <p>O comando <code>git merge</code> é usado para combinar mudanças de uma branch em outra. Este comando integra as alterações de uma branch de origem para a branch atual.</p>
+    <ul>
+        <li><strong>Mesclar uma Branch na Branch Atual:</strong>
+            <pre><code>git merge nome-da-branch</code></pre>
+        </li>
+    </ul>
+    
+    <h2>Exemplo Prático</h2>
+    <p>Vamos usar um exemplo prático para demonstrar esses comandos básicos de branches:</p>
+    
+    <h3>Criar e Mudar para uma Nova Branch</h3>
+    <p>Suponha que você esteja na branch <code>main</code> e deseja criar uma nova branch chamada <code>feature-x</code>:</p>
+    <pre><code>git checkout -b feature-x</code></pre>
+    
+    <h3>Fazer Alterações na Nova Branch</h3>
+    <p>Faça as alterações necessárias nos arquivos do projeto e confirme-as:</p>
+    <pre><code>git add .
+git commit -m "Adicionar nova funcionalidade X"</code></pre>
+    
+    <h3>Mudar de Volta para a Branch Principal</h3>
+    <p>Após finalizar o trabalho na <code>feature-x</code>, mude de volta para a branch <code>main</code>:</p>
+    <pre><code>git checkout main</code></pre>
+    
+    <h3>Mesclar as Alterações da Branch <code>feature-x</code></h3>
+    <p>Mescle as alterações da <code>feature-x</code> na <code>main</code>:</p>
+    <pre><code>git merge feature-x</code></pre>
+    
+    <h3>Excluir a Branch <code>feature-x</code> (Opcional)</h3>
+    <p>Se você não precisar mais da branch <code>feature-x</code>, pode excluí-la:</p>
+    <pre><code>git branch -d feature-x</code></pre>
+    
+    <h2>Conclusão</h2>
+    <p>Trabalhar com branches no Git é uma maneira poderosa de gerenciar diferentes linhas de desenvolvimento e colaborar com outros desenvolvedores. Com os comandos <code>git branch</code>, <code>git checkout</code> e <code>git merge</code>, você pode criar, alternar e mesclar branches de maneira eficaz.</p>
+    <p>No próximo capítulo, exploraremos como resolver conflitos de merge, que podem ocorrer durante o processo de mesclagem.</p>
+    </div>
+</body>
+</html>
