@@ -17,12 +17,10 @@ Staged (Preparado): Arquivos que foram modificados e adicionados ao índice, pro
 `git status`
 O comando git status exibe o status dos arquivos no repositório, mostrando quais arquivos estão modificados, quais estão preparados para commit e quais não estão sendo rastreados.
 
-`git status`
 ```
 git status
 ```
 
-`git status`
 ### git add
 
 `git add`
